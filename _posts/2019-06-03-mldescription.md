@@ -14,9 +14,13 @@ For reference, the images we are attempting to annotate look like the one below.
 
 
 The three most popular algorithms for object detection are RCNN (and its successors), Single Shot Detectors (SSD), and YOLO. Although all three approaches make use of deep neural networks, their methods of finding bounding boxes differ greatly. It is important to understand these differences, so I will provide a brief summary of each.
+
+
 R-CNN – Region Convolutional Neural network. Most modern version is known as Faster R-CNN. This algorithm uses a search function to find potential candidate objects to run object recognition on. Slower, but accurate. Unfortunately, since this algorithm depends on only running the neural network on likely object candidates detected in a untrainable search algorithm, it will most likely perform poorly at detecting objects that don’t fit traditional ideas of what constitutes an object.
 
+
 SSD- Single Shot (multibox) Detector. This algorithm works by creating multiple default bounding boxes over the entirety of an image. A neural network scores the bounding boxes and provides a prediction for how to adjust the regions to maximize a high class. Faster than R-CNN, but slightly less accurate. 
+
 
 YOLO – You Only Look Once. The input image is initially divided into a grid. Each cell in the grid is used to predict five bounding boxes. A classifier is run for each predicted bounding box, and outcomes with high certainty scores are returned as objects. This is the fastest of the three algorithms, although slightly less accurate in general. However, since the features we are looking at aren’t typical objects this method is likely to work better than R-CNN. 
 
